@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>IX Excellent MTsN 24 Jakarta Timur</title>
+    <style>
+     body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.navbar {
+    width: 100%;
+    padding: 15px;
+    background: #608BC1;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 15px;
+    transition: background 0.3s;
+}
+.navbar a:hover {
+    background: fafafa(245, 242, 242, 0.2);
+    border-radius: 5px;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+.hero-title {
+    font-size: 5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.button {
+    padding: 15px 30px;
+    font-size: 1em;
+    color: white;
+    background-color: #f39c12;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #d35400;
+}
+
+.section {
+    padding: 100px 20px;
+    text-align: center;
+    background: white;
+    color: black;
+    font-size: 13px;
+}
+
+.section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.section p {
+    font-size: 1.2em;
+    max-width: 100px;
+    margin: auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.gallery-item {
+    flex: 1 1 calc(33% - 40px);
+    max-width: calc(33% - 40px);
+}
+
+.gallery-item img {
+    width: 82%;
+    height: auto;
+    display: block;
+    justify-self:  center;
+    
+}
+
+.testimonial {
+    background: #333;
+    color: #fff;
+    padding: 20px 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.testimonial blockquote {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.testimonial cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: bold;
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form button {
+    padding: 15px;
+    font-size: 1em;
+    color: white;
+    background-color: #f39c12;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.contact-form button:hover {
+    background-color: #d35400;
+}
+marquee{
+    font-size: 35px;
+    font-weight: bold;
+}
+.emoji-large {
+font-size: 50px;
+}
+footer {
+    background: #608BC1;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .footer-section {
+        flex: 1;
+        padding: 10px;
+        min-width: 200px;
+    }
+
+    a {
+        color: #FFD700; /* Warna emas */
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+.zoom-in {
+transform: scale(1.2); /* Membesar 20% */
+}
+.shine-effect {
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: rgba(255, 255, 255, 0.5);
+transform: skewX(-45deg);
+transition: left 0.5s;
+}
+.shine {
+left: 100%;
+}
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+40% { transform: translateY(-30px); }
+60% { transform: translateY(-15px); }
+}
+
+.bounce {
+animation: bounce 2s infinite;
+}
+.clickable-image {
+width: 200px;
+transition: transform 0.3s ease;
+cursor: pointer;
+}
+
+.clickable-image:active {
+transform: scale(2);
+}
+    </style>
+    </head>
+    <body>
+
+    <div class="navbar" button class="button" id="shineButton">
+        <span class="shine-effect"></span>
+      </button>
+        <a href="#about">Home</a>
+        <a href="#skills">Profil</a>
+        <a href="#projects">Dokumentasi</a>
+        <a href="#testimonials">Tentang Kami</a>
+        <a href="#contact">Kritik Saran</a>
+    </div>
+
+    <div id="about" class="section">
+        <div id="about" class="section">
+            <marquee>&#x1F60D;&#x2764;&#x1F601;&#x1F600;&#x1F499;IX Excellent MTsN 24 Jakarta Timur&#x1F60D;&#x2764;&#x1F601;&#x1F600;&#x1F499;</marquee>
+           <p class="emoji-large">&#x2708;</p><img src ="C:\Users\AndreanRizky Pratama\OneDrive\Documents\IX Excellent\logo mtsn.jpeg" class="bounce" width="700" height="400"style="border: 5px solid black;<button class="button id="zoomButton"></button>><p class="emoji-large">&#x1F680;</p>
+           <div id="skills" class="section">
+               <h2>Profil</h2>
+               <div style="font-size: 25px; font-weight: bold; text-align: justify;" dir="ltr">
+       
+                MTsN 24 Jakarta Timur Kampus B dibangun pada tahun 2009. Madrasah setingkat SMP ini terletak di Jl. Terusan I Gusti Ngurahrai Kel. Pondok Kopi Kec. Duren Sawit Jakarta Timur. Madrasah ini merupakan Kelas Jauh (Filial) dari MTsN 24 Jakarta Timur yang terletak di Jl. Marzuki VII Kel. Penggilingan Kec. Cakung Jakarta Timur.
+
+                Opersioanal  MTS Negeri 24 Jakarta Timur Kampus B ini didasarkan pada BAST Nomor : KW.09.4/1/KS.01.2/13435a/2009 tgl 29 Des 2009 bahwa diserahterimakan gedung MTsN Pondok Kopi oleh Ka Kanwil Kemenag DKI kepada Kepala MTsN 24 Jakarta. Selain BAST tersebut juga diterbitkan SK Nomor : KW.09.1/1/HK.00.5/1449/2009 tentang penunjukan pemanfaatan dan penggunaan gedung MTs Pondok Kopi Jakarta Timur untuk pengembangan MTsN 24 Penggilingan Jakarta Timur.
+           <div id="projects" class="section">
+        
+            
+                <div id="projects" class="section">
+                    <h2>Dokumentasi </h2>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="C:\Users\AndreanRizky Pratama\Downloads\Gambar WhatsApp 2024-11-14 pukul 11.05.37_4e122ace.jpg" alt="foto 1" title="foto 1"class="clickable-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="C:\Users\AndreanRizky Pratama\Downloads\Gambar WhatsApp 2024-11-14 pukul 11.05.36_b6e5911a.jpg" alt="Foto 2" title="Foto 2"class="clickable-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="C:\Users\AndreanRizky Pratama\Downloads\Gambar WhatsApp 2024-11-14 pukul 11.05.36_4b4506c4.jpg" alt="Foto 3" title="Foto 3"class="clickable-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="C:\Users\AndreanRizky Pratama\Downloads\Gambar WhatsApp 2024-11-14 pukul 11.05.37_dd9f9136.jpg" alt="Foto 4" title="foto 4"class="clickable-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src= "C:\Users\AndreanRizky Pratama\Downloads\Gambar WhatsApp 2024-11-14 pukul 11.05.39_94ea0a83.jpg" alt="Foto 5" title="foto 5"class="clickable-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="Gambar WhatsApp 2024-11-14 pukul 11.05.53_d4ca4218.jpg" alt="Foto 6" title="foto 6"class="clickable-image">
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="testimonials" class="section">
+                    <h2>Tentang Kami</h2>
+                    <div class="testimonial">
+                        <blockquote style="font-size: 25px; font-weight: bold;">Untuk bermain Mobile Legends dengan baik, pertama-tama pahami peran hero seperti Tank, Fighter, Assassin, Mage, Marksman, atau Support, lalu pilih hero yang sesuai dengan kebutuhan tim. Pelajari skill dan combo hero, serta gunakan mini-map untuk mengetahui posisi musuh dan teman tim. Jangan bermain terlalu jauh sendirian; Mobile Legends adalah permainan tim yang membutuhkan kerja sama. Fokuslah pada objective seperti menghancurkan turret dan mengendalikan Lord dan Turtle, bukan hanya mengejar kill. Sesuaikan juga build item, emblem, dan spell dengan hero dan kondisi pertandingan. Komunikasi dengan tim penting untuk koordinasi, jadi gunakan chat atau ping untuk memberi informasi penting. Masuklah ke team fight dengan timing yang tepat, biarkan hero Tank atau Fighter memulai, lalu serang di saat yang strategis. Perbanyak latihan dan tonton gameplay pemain pro untuk belajar trik baru, serta tetap tenang dan hindari perilaku toxic agar kerja sama tim tetap solid. Dengan langkah ini, Anda bisa meningkatkan peluang kemenangan di Land of Dawn!</blockquote>
+                    </div>
+                </div>
+            
+                <div id="contact" class="section">
+                    <h2>Kritik Dan Saran Untuk Admin Website</h2>
+                    <div class="contact-form">
+                        <h3>Kirim Pesan</h3>
+                        <form id="contact-form">
+                            <input type="text" name="name" placeholder="Nama" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" rows="5" placeholder="Pesan" required></textarea>
+                            <button type="submit">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+           </div>
+           </div>
+
+           <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>IX Excellent gagah</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <p>Email: ahsdbha@gmail.com</p>
+                    <p>Telepon: +62 812345678</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ikuti Kami</h3>
+                    <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+                </div>
+            </div>
+          </footer>  
+            
+
+                
+                <script>
+                window.onload = function() {
+                  let scrollInterval = setInterval(function() {
+                    window.scrollBy(0, 6); // Scroll ke bawah sedikit demi sedikit (10px)
+                    if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+          clearInterval(scrollInterval); // Stop scroll setelah mencapai dasar halaman
+        }
+      }, 50); // Scroll setiap 30 milidetik
+    };
+    const zoomButton = document.getElementById("zoomButton");
+    zoomButton.addEventListener("click", function () {
+    zoomButton.classList.add("zoom-in");
+     setTimeout(() => {
+      zoomButton.classList.remove("zoom-in");
+    }, 200);
+    });
+        const shineButton = document.getElementById("shineButton");
+    const shineEffect = shineButton.querySelector(".shine-effect");
+
+    shineButton.addEventListener("click", function () {
+    // Tambahkan kelas animasi kilau
+    shineEffect.classList.add("shine");
+// Hapus kelas setelah animasi selesai
+setTimeout(() => {
+      shineEffect.classList.remove("shine");
+    }, 500);
+    });
+    function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+    }
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Pesan Anda telah dikirim!');
+    });
+    
+    </script>
+
+</body>
+</html>
+                        
+
